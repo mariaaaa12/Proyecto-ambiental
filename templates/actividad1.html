@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agricultura</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        button:hover {
+            background-color: #388e3c;
+        }
+
+        /* Estilo para ocultar la información inicialmente */
+        .info {
+            display: none;
+            margin-top: 20px;
+        }
+
+        /* Estilo para el contenedor de imágenes */
+        .imagenes-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px; /* Espacio entre imágenes */
+            margin-top: 30px;
+            flex-wrap: wrap; /* Evita que se bajen a otra fila */
+            overflow-x: auto; /* En caso de que no quepan, permite desplazamiento horizontal */
+        }
+        
+        
+        .imagen {
+            max-width: 300px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Adaptación a pantallas pequeñas */
+        @media (max-width: 768px) {
+            .imagenes-container {
+                gap: 20px;
+            }
+
+            .imagen {
+                max-width: 90%;
+            }
+        }
+        
+    </style>
+    <script>
+        // Función para mostrar la información solo del cultivo seleccionado
+        function mostrarInfo(cultivo) {
+            // Ocultar toda la información
+            var allInfo = document.querySelectorAll('.info');
+            allInfo.forEach(function(info) {
+                info.style.display = "none";
+            });
+
+            // Mostrar la información del cultivo seleccionado
+            var infoElement = document.getElementById('info' + cultivo);
+            infoElement.style.display = "block";
+        }
+    </script>
+</head>
+<body>
+
+    <h2>🌾 Agricultura en la Comunidad</h2>
+    <p>Información sobre prácticas agrícolas locales...</p>
+
+    <!-- Botones para los cultivos -->
+    <button onclick="mostrarInfo('Papa')">Papa</button>
+    <button onclick="mostrarInfo('Maiz')">Maíz</button>
+    <button onclick="mostrarInfo('Cebolla')">Cebolla</button>
+    <button onclick="mostrarInfo('Arveja')">Arveja</button>
+    <button onclick="mostrarInfo('Frijol')">Frijol</button>
+    <button onclick="mostrarInfo('Mora')">Mora</button>
+
+    <!-- Información sobre la papa -->
+    <div id="infoPapa" class="info">
+        <h3>🌱 Información sobre la Papa</h3>
+        <p>La papa es un tubérculo originario de los Andes y es uno de los alimentos más consumidos en el mundo...</p>
+        <div class="imagenes-container">
+            <img src="{{ url_for('static', filename='img/papa.jpg') }}" alt="Papa" class="imagen">
+            <img src="{{ url_for('static', filename='img/papa2.jpg') }}" alt="Papa 2" class="imagen">
+        </div>
+    </div>
+
+    <!-- Información sobre el maíz -->
+    <div id="infoMaiz" class="info">
+        <h3>🌽 Información sobre el Maíz</h3>
+        <p>El maíz es un cereal originario de América, utilizado como alimento básico en muchas culturas...</p>
+        <div class="imagenes-container">
+            <img src="{{ url_for('static', filename='img/maiz.jpg') }}" alt="Maiz " class="imagen">
+            <img src="{{ url_for('static', filename='img/maiz1.jpg') }}" alt="Maiz 1" class="imagen">
+        </div>
+    </div>
+
+    <!-- Información sobre la cebolla -->
+    <div id="infoCebolla" class="info">
+        <h3>🧅 Información sobre la Cebolla</h3>
+        <p>La cebolla es un vegetal de la familia de las Liliáceas, utilizado en múltiples preparaciones culinarias...</p>
+        <div class="imagenes-container">
+            <img src="{{ url_for('static', filename='img/cebolla.jpg') }}" alt="Cebolla " class="imagen">
+            <img src="{{ url_for('static', filename='img/cebolla1.jpg') }}" alt="Cebolla 1" class="imagen">
+        </div>
+    </div>
+
+    <!-- Información sobre la arveja -->
+    <div id="infoArveja" class="info">
+        <h3>🌱 Información sobre la Arveja</h3>
+        <p>La arveja es una leguminosa rica en proteínas y fibra, muy cultivada en climas templados...</p>
+        <div class="imagenes-container">
+            <img src="{{ url_for('static', filename='img/arveja.jpg') }}" alt="Arveja " class="imagen">
+            <img src="{{ url_for('static', filename='img/arveja1.jpg') }}" alt="Arveja 1" class="imagen">
+        </div>
+    </div>
+
+    <!-- Información sobre el frijol -->
+    <div id="infoFrijol" class="info">
+        <h3>🌱 Información sobre el Frijol</h3>
+        <p>El frijol es una leguminosa originaria de América, rica en proteínas y muy importante en la dieta...</p>
+        <div class="imagenes-container">
+            <img src="{{ url_for('static', filename='img/frijol.jpg') }}" alt="Frijol " class="imagen">
+            <img src="{{ url_for('static', filename='img/frijol1.jpg') }}" alt="Frijol 1" class="imagen">
+        </div>
+    </div>
+
+    <!-- Información sobre la mora -->
+    <div id="infoMora" class="info">
+        <h3>🍇 Información sobre la Mora</h3>
+        <p>La mora es una fruta pequeña y jugosa, cultivada en regiones templadas y tropicales...</p>
+        <div class="imagenes-container">
+            <img src="{{ url_for('static', filename='img/mora.jpg') }}" alt="Mora " class="imagen">
+            <img src="{{ url_for('static', filename='img/mora1.jpg') }}" alt="Mora 1" class="imagen">
+        </div>
+    </div>
+
+    <!-- Botón para regresar -->
+    <button onclick="window.close()">Regresar</button>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Economía</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        button:hover {
+            background-color: #388e3c;
+        }
+
+        /* Estilo para ocultar la información inicialmente */
+        .info {
+            display: none;
+            margin-top: 20px;
+        }
+
+        /* Estilo para el contenedor de imágenes */
+        .imagenes-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px; /* Espacio entre imágenes */
+            margin-top: 30px;
+            flex-wrap: wrap; /* Evita que se bajen a otra fila */
+            overflow-x: auto; /* En caso de que no quepan, permite desplazamiento horizontal */
+        }
+
+        .imagen {
+            max-width: 250px; /* Ajusta el tamaño de las imágenes */
+            height: auto;
+            border-radius: 8px; /* Opcional, para bordes redondeados */
+        }
+
+        /* Adaptación a pantallas pequeñas */
+        @media (max-width: 768px) {
+            .imagenes-container {
+                gap: 20px;
+            }
+
+            .imagen {
+                max-width: 90%;
+            }
+        }
+    </style>
+    <script>
+        // Función para mostrar la información solo de la actividad seleccionada
+        function mostrarInfo(actividad) {
+            // Ocultar toda la información
+            var allInfo = document.querySelectorAll('.info');
+            allInfo.forEach(function(info) {
+                info.style.display = "none";
+            });
+
+            // Mostrar la información de la actividad seleccionada
+            var infoElement = document.getElementById('info' + actividad);
+            infoElement.style.display = "block";
+        }
+    </script>
+</head>
+<body>
+
+    <h2>🌾 Economía en la Comunidad</h2>
+    <p>Información sobre prácticas comerciales locales...</p>
+
+    <p><strong>Encontramos distintas actividades como:</strong></p>
+
+    <div class="cultivos">
+        <button onclick="mostrarInfo('Plaza')">Plaza de Mercado</button>
+        <button onclick="mostrarInfo('Transporte')">Transporte y Logística</button>
+        <button onclick="mostrarInfo('Centro')">Centro de Acopio</button>
+    </div>
+
+    <!-- Información sobre la Plaza de Mercado -->
+    <div id="infoPlaza" class="info">
+        <h3>🏙️ Información sobre la Plaza de Mercado</h3>
+        <p>La Plaza de Mercado es un centro de intercambio comercial que conecta a productores locales con consumidores...</p>
+        <!-- Contenedor con imágenes centradas en fila -->
+        <div class="imagenes-container">
+            <img src="{{ url_for('static', filename='img/plaza_mercado1.jpg') }}" alt="Plaza de Mercado 1" class="imagen">
+            <img src="{{ url_for('static', filename='img/plaza_mercado2.jpg') }}" alt="Plaza de Mercado 2" class="imagen">
+        </div>
+    </div>
+
+    <!-- Información sobre Transporte y Logística -->
+    <div id="infoTransporte" class="info">
+        <h3>🚚 Información sobre Transporte y Logística</h3>
+        <p>El transporte y la logística son esenciales para la distribución eficiente de productos y servicios en la comunidad...</p>
+        <!-- Contenedor con imágenes centradas en fila -->
+        <div class="imagenes-container">
+            <img src="{{ url_for('static', filename='img/transporte.jpg') }}" alt="Transporte" class="imagen">
+            <img src="{{ url_for('static', filename='img/trasporte1.jpg') }}" alt="Transporte 1" class="imagen">
+        </div>
+    </div>
+
+    <!-- Información sobre Centro de Acopio -->
+    <div id="infoCentro" class="info">
+        <h3>🏪 Información sobre el Centro de Acopio</h3>
+        <p>El Centro de Acopio es el lugar donde se almacenan productos agrícolas y ganaderos para su posterior distribución...</p>
+        <!-- Contenedor con imágenes centradas en fila -->
+        <div class="imagenes-container">
+            <img src="{{ url_for('static', filename='imagenes/centro_acopio1.jpg') }}" alt="Centro de Acopio" class="imagen">
+        </div>
+    </div>
+
+    <!-- Botón para cerrar la ventana -->
+    <button onclick="window.close()">Regresar</button>
+
+</body>
+</html>

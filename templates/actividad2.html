@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ganadería</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        button:hover {
+            background-color: #388e3c;
+        }
+
+        /* Estilo para ocultar la información inicialmente */
+        .info {
+            display: none;
+            margin-top: 20px;
+        }
+
+        /* Estilo para el contenedor de imágenes */
+        .imagenes-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px; /* Espacio entre imágenes */
+            margin-top: 30px;
+            flex-wrap: wrap; /* Evita que se bajen a otra fila */
+            overflow-x: auto; /* En caso de que no quepan, permite desplazamiento horizontal */
+        }
+
+        .imagen {
+            max-width: 250px; /* Ajusta el tamaño de las imágenes */
+            height: auto;
+            border-radius: 8px; /* Opcional, para bordes redondeados */
+        }
+
+        /* Adaptación a pantallas pequeñas */
+        @media (max-width: 768px) {
+            .imagenes-container {
+                gap: 20px;
+            }
+
+            .imagen {
+                max-width: 90%;
+            }
+        }
+    </style>
+    <script>
+        // Función para mostrar la información solo de la categoría ganadera seleccionada
+        function mostrarInfo(categoria) {
+            // Ocultar toda la información
+            var allInfo = document.querySelectorAll('.info');
+            allInfo.forEach(function(info) {
+                info.style.display = "none";
+            });
+
+            // Mostrar la información de la categoría seleccionada
+            var infoElement = document.getElementById('info' + categoria);
+            infoElement.style.display = "block";
+        }
+    </script>
+</head>
+<body>
+
+    <h2>🌾 Ganadería en la Comunidad</h2>
+    <p>Información sobre prácticas ganaderas locales...</p>
+
+    <p><strong>Las principales categorías ganaderas son:</strong></p>
+
+    <div class="cultivos">
+        <button onclick="mostrarInfo('Bovino')">Bovino</button>
+        <button onclick="mostrarInfo('Porcino')">Porcino</button>
+        <button onclick="mostrarInfo('Ovino')">Ovino</button>
+    </div>
+
+    <!-- Información sobre el Bovino -->
+    <div id="infoBovino" class="info">
+        <h3>🐄 Información sobre el Bovino</h3>
+        <p>El ganado bovino es una de las especies ganaderas más importantes para la producción de carne y leche...</p>
+        <div class="imagenes-container">
+            <img src="{{ url_for('static', filename='img/bovino.jpg') }}" alt="Bovino " class="imagen">
+            <img src="{{ url_for('static', filename='img/bovino1.jpg') }}" alt="Bovino 1" class="imagen">
+        </div>
+    </div>
+
+    <!-- Información sobre el Porcino -->
+    <div id="infoPorcino" class="info">
+        <h3>🐖 Información sobre el Porcino</h3>
+        <p>El ganado porcino es clave para la producción de carne de cerdo, un alimento muy consumido en muchas regiones...</p>
+        <div class="imagenes-container">
+            <img src="{{ url_for('static', filename='img/porcino.jpg') }}" alt="Porcino " class="imagen">
+            <img src="{{ url_for('static', filename='img/porcino1.jpg') }}" alt="Porcino 1" class="imagen">
+        </div>
+    </div>
+
+    <!-- Información sobre el Ovino -->
+    <div id="infoOvino" class="info">
+        <h3>🐑 Información sobre el Ovino</h3>
+        <p>El ganado ovino es fundamental para la producción de carne y lana, especialmente en regiones templadas...</p>
+        <div class="imagenes-container">
+            <img src="{{ url_for('static', filename='img/ovino.jpg') }}" alt="Ovino " class="imagen">
+            <img src="{{ url_for('static', filename='img/ovino1.jpg') }}" alt="Ovino 1" class="imagen">
+        </div>
+    </div>
+
+    <!-- Botón para cerrar la ventana -->
+    <button onclick="window.close()">Regresar</button>
+
+</body>
+</html>

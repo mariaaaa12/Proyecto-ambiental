@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Ambiental</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    
+</head>
+<body>
+    <header>
+        <h1>🌱 Monitoreo ambiental para la 
+            conservación de tierras, ríos y bosques en mi comunidad  
+            Resguardo Indígena de Males  🌿</h1>
+        <p>“Cuidamos la tierra, el agua y el aire para el futuro de nuestra comunidad”</p>
+    </header>
+
+    <section class="info-local">
+        <h2>🌍 Sobre Córdoba - Nariño</h2>
+        <div class="contenedor-flex">
+            <div class="cuadro-info">
+                <p>
+                    Córdoba es un municipio ubicado en el departamento de Nariño, al suroccidente de Colombia. Se encuentra el Resguardo Indígena de Males, conocido 
+                     como “la ciudad donde nace el sol”. Las actividades 
+                    económicas de mayor importancia son la agricultura, la ganadería y el 
+                    comercio. 
+                    Sus tierras se distribuyen en los pisos térmicos templado, frío y piso 
+                    bioclimático páramo, hay 13.463 habitantes, el 61,4% de la población residente en 
+                    Córdoba, ha alcanzado el nivel básico primaria y el 18,4% secundaria; el 1,7% 
+                    ha alcanzado el nivel profesional y el 0,2% ha realizado estudios de 
+                    especialización, maestría o doctorado. La población residente sin ningún nivel 
+                    educativo es el 11,6% y el 97,5% de la población residente en Córdoba se 
+                    autorreconoce como Indígena. Esta zona es reconocida por su importancia ecológica,
+                    ya que forma parte de ecosistemas estratégicos que abastecen de agua a múltiples comunidades cercanas.
+                </p>
+                
+                <div class="imagenes-municipio">
+                    <img src="{{ url_for('static', filename='img/cordoba1.jpg') }}" alt="Foto de Córdoba 1">
+                    <img src="{{ url_for('static', filename='img/cordoba2.jpg') }}" alt="Foto de Córdoba 2">
+                </div>
+                
+            </div>
+    
+            
+            <div class="botones-actividades">
+                <button onclick="abrirVentana('actividad1')">Agricultura</button>
+                <button onclick="abrirVentana('actividad2')">Ganadería</button>
+                <button onclick="abrirVentana('actividad3')">Economia</button>
+            </div>
+            
+            
+        </div>
+        
+    </section>
+    
+    
+    <section class="problema">
+        <h2>❗ El Problema</h2>
+        <p>La comunidad del Resguardo Indígena de Males enfrenta una amenaza 
+            seria y continua a sus recursos naturales, que incluye la deforestación 
+            significativa, la contaminación de ríos y los efectos del cambio climático. Esta 
+            situación pone en riesgo la sostenibilidad de los bosques, la calidad del agua 
+            y la seguridad alimentaria, lo que afecta negativamente la vida cotidiana y el 
+            bienestar de sus habitantes.</p>
+    
+        <div class="contenedor-columnas">
+            <div class="columna">
+                <h3>🌲 Problemas</h3>
+                <ul>
+                    <li>Pérdida de cobertura vegetal</li>
+                    <li>Contaminación del agua en la bocatoma</li>
+                    <li>Falta de datos ambientales actualizados</li>
+                    <li>Bajo compromiso comunitario</li>
+                    <li>efectos del cambio climático</li>
+                </ul>
+            </div>
+    
+            <div class="columna">
+                <h3>🔍 Causas</h3>
+                <ul>
+                    <li>Deforestación y uso inadecuado del suelo</li>
+                    <li>Descargas de productos químicos o aguas residuales</li>
+                    <li>Ausencia de herramientas tecnológicas de monitoreo</li>
+                    <li>Desconocimiento o falta de educación ambiental</li>
+                    <li>Sequías e inundaciones más frecuentes</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section class="objetivos">
+        <h2>🎯 Objetivos del Proyecto</h2>
+    
+        <div class="objetivo-general">
+            <h3>Objetivo General</h3>
+            <p>Contribuir a la conservación de los ecosistemas naturales a través del 
+                desarrollo e implementación de un sistema de monitoreo ambiental basado 
+                en tecnología, que permita la protección de tierras, ríos y bosques, además 
+                de abarcar la promoción de prácticas sostenibles, resaltando la importancia 
+                de la conservación ambiental y el empoderamiento del Resguardo Indígena 
+                de Males en la gestión de sus recursos naturales. </p>
+        </div>
+    
+        <div class="objetivos-especificos">
+            <h3>Objetivos Específicos</h3>
+            <ul>
+                <li>Diseñar e implementar un Sistema de Monitoreo Ambiental que utilice tecnologías de sensores, cámaras, drones para recopilar 
+                    datos ambientales críticos</li>
+                <li>Desarrollar un Panel de Control de Datos Ambientales, interfaz de usuario amigable que muestre los datos recopilados 
+                    de manera clara y accesible para la comunidad </li>
+                <li>Capacitación de la comunidad en el uso y mantenimiento del sistema, fomentando prácticas sostenibles de manejo de recursos naturales basadas 
+                    en los datos recopilados. </li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- Título por fuera del contenedor -->
+    <h2 class="titulo-actividades">📅 Actividades</h2>
+
+    <section class="actividades-proyecto">
+        <div class="botones-actividades proyecto">
+            <button class="actividad-btn">Planificación</button>
+            <button class="actividad-btn">Preparación</button>
+            <button class="actividad-btn">Implementación</button>
+            <button class="actividad-btn">Evaluación y Ajustes</button>
+            <button class="actividad-btn">Sensibilización y Educación</button>
+            <button class="actividad-btn">Sostenibilidad</button>
+        </div>
+    </section>
+
+    
+    
+    
+    
+
+    <section class="sobre-proyecto">
+        <h2>🌍 ¿Por qué este Panel Ambiental?</h2>
+        <p>Este panel permite a la comunidad acceder en tiempo real a datos relevantes sobre el ambiente local, como la temperatura, la humedad, la calidad del aire y del agua. 
+        Con esta herramienta buscamos promover la educación ambiental, fomentar el cuidado de los recursos naturales y facilitar la toma de decisiones informadas. El proyecto ambiental se desarrolla en esta zona con el fin de fortalecer el cuidado de la bocatoma que suministra agua a la comunidad 
+        de San Pablo, promoviendo la siembra de árboles nativos y el monitoreo ambiental con tecnologías como sensores y cámaras.</p>
+    </section>
+
+    <section class="imagenes">
+        <img src="{{ url_for('static', filename='img/bosque.jpg') }}" alt="Bosque">
+        <img src="{{ url_for('static', filename='img/rio.jpg') }}" alt="Río">
+        <img src="{{ url_for('static', filename='img/aire_puro.jpg') }}" alt="Aire puro">
+    </section>
+    
+    <div id="miModal" class="modal">
+        <span class="cerrar" onclick="cerrarModal()">&times;</span>
+        <img class="modal-contenido" id="imagenAmpliada" alt="Imagen Ampliada">
+    </div>
+
+    <section class="recomendaciones">
+        <h2>🌿 Recomendaciones Ambientales</h2>
+        <div class="tarjetas">
+            <div class="tarjeta">
+                <h3>Uso responsable del agua</h3>
+                <p>Evita el desperdicio. Reutiliza el agua cuando sea posible y repara fugas.</p>
+            </div>
+            <div class="tarjeta">
+                <h3>Protege los bosques</h3>
+                <p>Participa en jornadas de reforestación y evita quemas o tala indiscriminada.</p>
+            </div>
+            <div class="tarjeta">
+                <h3>Cuida el aire</h3>
+                <p>Utiliza transporte sostenible y evita quemar basura.</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="datos">
+        <div class="panel">
+            <p><strong>Temperatura:</strong> {{ temperatura }} °C</p>
+            <p><strong>Humedad:</strong> {{ humedad }} %</p>
+            <p><strong>Calidad del Aire:</strong> {{ aire }}</p>
+            <p><strong>Calidad del Agua:</strong> {{ agua }}</p>
+        </div>
+    </section>
+
+    <section class="grafica">
+        <canvas id="grafica"></canvas>
+    </section>
+
+    
+    
+    <section class="info-extra">
+        <!-- Calendario -->
+        <div class="calendario">
+            <h2>📅 Calendario de Actividades Ambientales</h2>
+            
+            <ul>
+                {% for actividad in actividades %}
+                    <li><strong>{{ actividad.fecha }}:</strong> {{ actividad.descripcion }}</li>
+                {% endfor %}
+            </ul>
+            <h3>Agregar nueva actividad</h3>
+            <form method="POST" action="/agregar_actividad">
+                <input type="text" name="fecha" placeholder="Ej: 10 de mayo" required><br><br>
+                <input type="text" name="descripcion" placeholder="Descripción de la actividad" required><br><br>
+                <button type="submit">Agregar Actividad</button>
+            </form>
+
+            
+            
+        </div>
+    
+        <!-- Testimonios -->
+        <div class="testimonios">
+            <h2>🗣️ Testimonios de la Comunidad</h2>
+    
+            {% for testimonio in testimonios %}
+            <div class="testimonio">
+                <p>"{{ testimonio.texto }}"</p>
+                <cite>- {{ testimonio.autor }}</cite>
+            </div>
+            {% endfor %}
+    
+            <h3>Agregar nuevo testimonio</h3>
+            <form method="POST">
+                <textarea name="texto" placeholder="Escribe tu testimonio aquí..." required></textarea><br>
+                <input type="text" name="autor" placeholder="Tu nombre o cargo" required><br>
+                <button type="submit">Enviar Testimonio</button>
+            </form>
+        </div>
+    </section>
+    
+
+    <!-- Formulario de contacto -->
+    <section class="contacto">
+        <h2>Contáctanos</h2>
+        <form action="/enviar" method="POST">
+            <input type="text" name="nombre" placeholder="Tu nombre" required><br>
+            <input type="email" name="correo" placeholder="Tu correo" required><br>
+            <textarea name="mensaje" placeholder="Tu mensaje" required></textarea><br>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Proyecto desarrollado por el grupo de investigación ambiental de la Universidad de Nariño.</p>
+        <p>Contacto: info@panelambiental.com</p>
+    </footer>
+    
+
+    <script>
+        const ctx = document.getElementById('grafica').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: {{ datos.dias | tojson }},
+                datasets: [
+                    {
+                        label: 'Temperatura (°C)',
+                        data: {{ datos.temperaturas | tojson }},
+                        borderColor: 'red',
+                        fill: false
+                    },
+                    {
+                        label: 'Humedad (%)',
+                        data: {{ datos.humedades | tojson }},
+                        borderColor: 'blue',
+                        fill: false
+                    }
+                ]
+            },
+            options: {
+                responsive: true
+            }
+        });
+
+        function abrirVentana(nombreActividad) {
+            window.open(
+                `/${nombreActividad}`, 
+                'popup', 
+                'width=700,height=600,scrollbars=yes,resizable=yes'
+            );
+        }
+
+        // Código para ampliar imágenes en la sección .imagenes
+// Código para ampliar imágenes en .imagenes y .imagenes-municipio
+        const imagenes = document.querySelectorAll('.imagenes img, .imagenes-municipio img');
+        const modal = document.getElementById('miModal');
+        const imgAmpliada = document.getElementById('imagenAmpliada');
+
+        imagenes.forEach(imagen => {
+            imagen.addEventListener('click', () => {
+                modal.style.display = 'block';
+                imgAmpliada.src = imagen.src;
+                imgAmpliada.alt = imagen.alt;
+            });
+        });
+
+        function cerrarModal() {
+            modal.style.display = 'none';
+        }
+
+        window.addEventListener('click', function (e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
